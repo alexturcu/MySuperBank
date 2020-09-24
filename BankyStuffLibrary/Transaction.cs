@@ -1,0 +1,21 @@
+﻿using Humanizer;
+
+namespace BankyStuffLibrary
+{
+    using System;
+
+    public class Transaction
+    {
+        public decimal Amount { get; set; }
+        public string AmountForHumans => ((int) Amount).ToWords();
+        public DateTime Date { get; set; }
+        public string Notes { get; set; }
+
+        public Transaction(decimal amount, DateTime date, string note)
+        {
+            Amount = amount;
+            Date = date;
+            Notes = note;
+        }
+    }
+}
